@@ -5,7 +5,7 @@
 	st = status
 	ci = commit -v
 	retag = !git tag -d $1 && git push origin :refs/tags/$1 && git tag $1 && git push origin tag
-	cleanup = "!git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
+	brclean = "!git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
 [core]
 	ignorecase = false
 [pull]
